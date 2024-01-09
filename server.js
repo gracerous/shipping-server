@@ -21,8 +21,8 @@ app.post('/submit-form', async (req, res) => {
   try {
     const { name, email, telephone, message } = req.body;
     const mailOptions = {
-      from: 'inquiry@itiro-dmcc.ae',
-      to: 'contact@itiro-dmcc.ae',
+      from: process.env.EMAIL_SENDER,
+      to: process.env.EMAIL_RECEIVER,
       subject: 'New Contact Form Submission',
       text: `
         Name: ${name}
